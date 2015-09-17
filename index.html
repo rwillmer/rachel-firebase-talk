@@ -72,14 +72,15 @@
         <section title="">
           <br><br>
           <h2>Why I chose Firebase to add Real-Time Data to Luzme</h2>
-          <img src="images/firebase-logo.png" class="no-style">
-          <br> <br>
           <p>
             <h6>Rachel Willmer / <a href="http://twitter.com/rwillmer">@rwillmer</a></h6>
+	          <img src="images/firebase-logo.png" class="no-style" 	style='float: left' width=100px>
+	          <img src="images/Luzme-400dpiLogo.png" class="no-style" style='float: right' width=200px>
+          <br> <br>
 
           </p>
 
-          <aside>
+          <aside class='notes'>
           	Q: https://vote-demo.firebaseio.com window open?
           </aside>
         </section>
@@ -95,8 +96,8 @@
           <h3>Warning</h3>
           <p class="text-medium">There Will Be A Demo</p>
           <p class="text-cream text-medium">and I need your help</p>
-          <p class="text-cream text-medium">Please open a browser</p>
-          <p class="text-cream text-medium">and login with Twitter</p>
+          <p class="text-small">Please open a browser<br/>
+          and login with Twitter</p>
         </section>
 
         <section>
@@ -105,6 +106,11 @@
           <p class="text-cream text-medium">A Programmer</p>
           <p class="text-cream text-medium">An Entrepreneur</p>
           <p class="text-cream text-medium">An Avid Book Lover</p>
+          <aside class='notes'>
+          	Been working with new technology for 30 years...
+          	Been working for myself for 20 years...
+          	Been reading all my life...
+          </aside>
         </section>
 
         <section>
@@ -120,8 +126,13 @@
         <section>
           <h3>So I built Luzme</h3>
           <p class='text-small'>"Never Pay Full-Price For An Ebook Again!"</p>
+          <img src="images/Luzme-400dpiLogo.png" class="no-style" width=200px>
+          <p class='text-medium'>
+          	<a href='https://luzme.com'>
+				https://luzme.com
+			</a>
+		  </p>
           <p>the world's best ebook search site (IMHO)</p>
-          <p class='text-medium'><a href='https://luzme.com'>https://luzme.com</a></p>
         </section>
 
         <section>
@@ -156,6 +167,9 @@
         <section>
           <h3>I Need A Responsive Website</h3>
           <p>And I don't mean media queries</p>
+          <p class='fragment'>I mean<br>responsive data</p>
+          <p class='fragment'>When you come to my website,<br>
+          	I want you to see up-to-date data</p>
         </section>
 
         <section>
@@ -169,7 +183,7 @@
 
         <section>
           <h3>And Then I Found Firebase</h3>
-          <table>
+          <table style='margin: auto'>
           	<tbody>
           		<tr>
           		<td>Documentation</td><td>YES</td>
@@ -182,7 +196,8 @@
           		</tr>
           	</tbody>
           </table>
-          <p>&lt;Happy Dance&gt;</p>
+          <br>
+          <p class='fragment'>&lt;Happy Dance&gt;</p>
         </section>
 
         <section>
@@ -194,12 +209,59 @@
           <a href='https://vote-demo.firebaseio.com' target='_blank'>https://vote-demo.firebaseio.com</a>
           </p>
 
-          <aside>
+          <aside class='notes'>
           Explain what they're going to see before giving them the url
           </aside>
         </section>
 
-HERE
+        <section>
+        	<h3>The Code: #1 the HTML</h3>
+        	<pre>
+        	<code>
+<div class="media"  ng-click='vm.toggle()'>
+    <div class="media-left">
+        <button type="button" class="btn btn-default btn-lg">
+            <div>
+                <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>
+            </div>
+            <div>
+                {{choice.count}}
+                <br/>
+                {{choice.people.length}}
+            </div>
+        </button>
+    </div>
+    <div class="media-body">
+        <h3 class='media-heading'>
+            {{choice.$id}}
+        </h3>
+        <ul class='list-inline'>
+            <li ng-repeat='person in choice.people'>
+                <a href='http://twitter.com/{{person.userName}}'>
+                    <img ng-src="{{person.imageUrl}}">
+                </a>
+            </li>
+        </ul>
+        <ul class='list-inline'>
+            <li ng-repeat='person in choice.people'>
+                <a href='http://twitter.com/{{person.userName}}'>{{person.userName}}</a>
+            </li>
+        </ul>
+    </div>
+</div>
+</code>
+</pre>
+        </section>
+
+        <section>
+        <h2>The Code: #2 the Firebase Magic</h2>
+        <pre>
+        <code>
+        var ref = new Firebase('https://vote-demo.firebaseio.com');
+
+        </code>
+        </pre>
+        </section>
 
         <section>
           <p class="text-cream text-medium">The <span class="text-discs">Realtime Backend</span></p>
