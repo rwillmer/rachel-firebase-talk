@@ -1,3 +1,9 @@
+# Rachel's Firebase+Luzme talk
+
+This slide deck borrows style and some content from Firebase's 'Intro to Firebase' talk.
+
+Presented by Rachel Willmer at PyConUK 2015 and WebExpo 2015
+
 # Intro to Firebase
 
 This slide deck can be customized to give an introductory talk about Firebase. It is powered by [reveal.js](http://lab.hakim.se/reveal-js), a wonderful and powerful framework for creating HTML presentations.
