@@ -204,9 +204,10 @@
           <h3>Demo Time</h3>
           <p>Please open a browser</p>
           <p>and login into Twitter</p>
+          <br>
           <p class='fragment'>
           <a href='https://vote-demo.firebaseapp.com' target='_blank'>https://vote-demo.firebaseapp.com</a><br/>
-          <a href='https://vote-demo.firebaseio.com' target='_blank'>https://vote-demo.firebaseio.com</a>
+          <!-- <a href='https://vote-demo.firebaseio.com' target='_blank'>https://vote-demo.firebaseio.com</a> -->
           </p>
 
           <aside class='notes'>
@@ -257,12 +258,31 @@
         <h2>The Code: #2 the Firebase Magic</h2>
         <pre>
         <code>
-        var ref = new Firebase('https://vote-demo.firebaseio.com');
-
+        vm.choices = fbutil.syncArray(
+            '/choices',
+            {'orderByChild': 'count'}
+        );
         </code>
         </pre>
         </section>
 
+        <section>
+          <br><br>
+          <h2>More about Firebase</h2>
+          <img src="images/firebase-logo.png" class="no-style">
+        </section>
+
+        <section>
+          <h3>I need ...</h3>
+          <p class='text-small'>Easy to write</p>
+          <p class='text-small'>Easy to debug</p>
+          <p class='text-small'>Real-Time</p>
+          <p class='text-small'>Mobile</p>
+          <p class='text-small'>Speed</p>
+          <p class="text-small">Scalability</p>
+          <p class='text-small'>Reliability</p>
+        </section>
+<!--
         <section>
           <p class="text-cream text-medium">The <span class="text-discs">Realtime Backend</span></p>
           <p class="text-cream text-medium">for your App</p>
@@ -287,6 +307,7 @@
           <br><br>
           <img src="images/clients.png" alt="gdocs" class="no-style" />
         </section>
+-->
 
         <section>
 					<p class="text-medium era-point">The user doesn't care about your backend</p>
@@ -303,6 +324,7 @@
         <!--
           Firebase
         -->
+        <!--
         <section>
           <h3>Firebase</h3>
           <img src="images/firebase-logo.png" class="no-style era-point">
@@ -310,6 +332,7 @@
           <p class="text-cream">The <span class="text-discs">Realtime Backend</span></p>
           <p class="text-cream">for your App</p>
         </section>
+		-->
 
         <section>
           <h4>The Firebase Backend</h4>
@@ -319,6 +342,7 @@
           <img src="images/hosting-box.png" class="no-style framework-logo">
         </section>
 
+<!--
         <section>
 					<h3>Forget the Server</h3>
 					<p class="era-point">Firebase apps can run on client-side code only</p>
@@ -329,17 +353,18 @@
         <section>
           <img src="images/data-box.png" class="no-style framework-logo">
         </section>
+-->
 
         <section>
           <h2>Cloud database</h2>
           <p class="era-point">NoSQL data-store</p>
           <p class="era-point">Returns JSON from a RESTful API</p>
         </section>
-
+<!--
         <section>
           <img src="/images/simple-api.png" alt="" class="no-style">
         </section>
-
+ -->
         <section>
           <h2>Realtime Data</h2>
           <p class="era-point text-cream">
@@ -359,40 +384,47 @@
 
         <section>
           <h2>Store Data</h2>
+          <pre>
           <code-box langs="JavaScript,Swift,Java">
             <code-example lang="JavaScript">
+            // Javascript
 var ref = new Firebase("https://&lt;your-firebase-app&gt;.firebaseio.com/message");
 ref.set('All the things');
             </code-example>
             <code-example lang="Swift">
+            // Swift
 let ref = Firebase(url: "https://&lt;your-firebase-app&gt;.firebaseio.com/message")
 ref.setValue("All the things")
             </code-example>
             <code-example lang="Java">
+            // Java
 Firebase ref = new Firebase("https://&lt;your-firebase-app&gt;.firebaseio.com/message");
 ref.setValue("All the things");
             </code-example>
           </code-box>
-
+          </pre>
         </section>
 
         <section>
           <h2>Sync Data</h2>
-
+<pre>
           <code-box langs="JavaScript,Swift,Java">
             <code-example lang="JavaScript">
+            //Javascript
 var ref = new Firebase("https://&lt;your-firebase-app&gt;.firebaseio.com/message");
 ref.on("value", function(snap) {
   console.log(snap.val());
 });
             </code-example>
             <code-example lang="Swift">
+            //Swift
 let ref = Firebase(url: "https://&lt;your-firebase-app&gt;.firebaseio.com/message")
 ref.observeEventType(.Value, withBlock: { snap in
   println(snap.value)
 })
             </code-example>
             <code-example lang="Java">
+            //Java
 Firebase ref = new Firebase("https://&lt;your-firebase-app&gt;.firebaseio.com/message");
 ref.addValueEventListener(new ValueEventListener() {
   @Override
@@ -403,7 +435,7 @@ ref.addValueEventListener(new ValueEventListener() {
 });
             </code-example>
           </code-box>
-
+</pre>
         </section>
 
         <section>
@@ -437,16 +469,18 @@ ref.addValueEventListener(new ValueEventListener() {
 
         <section>
           <h3>One line of code</h3>
-
+          <pre>
           <code-box langs="Swift,Java">
             <code-example lang="Swift">
+            // Swift
 Firebase.defaultConfig().persistenceEnabled = true
             </code-example>
             <code-example lang="Java">
+            // Java
 Firebase.getDefaultConfig().setPersistenceEnabled(true);
             </code-example>
           </code-box>
-
+          </pre>
         </section>
 
         <section>
@@ -459,31 +493,31 @@ Firebase.getDefaultConfig().setPersistenceEnabled(true);
             Firebase supports several forms of authentication
           </p>
 
-          <p class="era-point fragment">
+          <p class="era-point">
             Email &amp; Password
           </p>
 
-          <p class="era-point fragment">
+          <p class="era-point">
              Google
           </p>
 
-          <p class="era-point fragment">
+          <p class="era-point ">
              Twitter
           </p>
 
-          <p class="era-point fragment">
+          <p class="era-point ">
              Facebook
           </p>
 
-          <p class="era-point fragment">
+          <p class="era-point ">
              Github
           </p>
 
-          <p class="era-point fragment">
+          <p class="era-point ">
              Anonymous
           </p>
 
-          <p class="era-point fragment">
+          <p class="era-point ">
              ...and even custom backends
           </p>
 
@@ -492,7 +526,7 @@ Firebase.getDefaultConfig().setPersistenceEnabled(true);
         <section class="hasCode">
 
           <h3>Authentication</h3>
-
+          <pre>
           <code-box langs="JavaScript,Swift,Java">
             <code-example lang="JavaScript" prop="one">
 // Login with Google
@@ -528,13 +562,13 @@ ref.authWithOAuthToken("google", "&lt;OAuth Token&gt;", new Firebase.AuthResultH
             </code-example>
 
           </code-box>
-
+          </pre>
         </section>
 
         <section class="hasCode">
 
           <h3>Authentication</h3>
-
+<pre>
           <code-box langs="JavaScript,Swift,Java">
             <code-example lang="JavaScript" prop="one">
 // Listen for authentcated users
@@ -572,7 +606,7 @@ ref.authWithOAuthToken("google", "&lt;OAuth Token&gt;", new Firebase.AuthResultH
             </code-example>
 
           </code-box>
-
+</pre>
         </section>
 
         <section>
@@ -697,11 +731,11 @@ firebase deploy
 					<p class="text-small era-point">CDN cached assets</p>
 					<p class="text-small era-point">One click rollbacks</p>
 				</section>
-
+<!--
         <section>
           <h1>(Optional) Live Coding</h1>
         </section>
-
+ -->
         <section>
 					<h3>Tooling & Integration</h3>
 				</section>
@@ -781,6 +815,9 @@ app.controller('ChatCtrl', function($scope, $firebaseArray) {
             <li class="era-point">
               <span class="text-discs">Warby Parker</span> - Powering pneumatic tubes
             </li>
+            <li class='era-point'>
+            	<span class='text-discs'>Luzme!</span> - ebook price comparison site
+            </li>
           </ul>
         </section>
 
@@ -800,12 +837,61 @@ app.controller('ChatCtrl', function($scope, $firebaseArray) {
 					<img src="images/hosting-box.png" class="no-style framework-logo">
 				</section>
 
+		<section>
+		<h2>But what about Python?</h2>
+		<pre>
+		<code class='python'>
+from firebase import firebase
+
+from django.conf import settings
+
+
+class FirebaseApp(firebase.FirebaseApplication):
+
+    def __init__(self):
+        self.dsn = settings.FIREBASE_DSN
+        self.secret = settings.FIREBASE_SECRET
+
+    def _authenticate(self, params, headers):
+        params.update({'auth': self.readwrite})
+
+fb = FirebaseApp()
+		</code>
+		</pre>
+		</section>
+
+		<section>
+		<h2>But what about Python?</h2>
+		<pre>
+			<code class='python'>
+# get
+data = fb.get('/foo, 'bar')
+
+# set
+fb.put('/foo', 'bar', {'hello': 'world'})
+
+			</code>
+		</pre>
+		</section>
+
         <section>
-          <h1>ASK ME QUESTIONS</h1>
-          <h5>YOUR_NAME / <a href="http://twitter.com/YOUR_TWITTER_HANDLE">@YOUR_TWITTER_HANDLE</a></h5>
-          <h5>YOUR_JOB / <a href="http://twitter.com/YOUR_COMPANY_TWITTER_HANDLE">@YOUR_COMPANY</a></h5>
+          <h3>I need ...</h3>
+          <p>Easy to write</p>
+          <p>Easy to debug</p>
+          <p>Real-Time</p>
+          <p>Mobile</p>
+          <p>Speed</p>
+          <p>Scalability</p>
+          <p>Reliability</p>
+          <p class='text-medium'>That's Why I Chose Firebase</p>
         </section>
 
+        <section>
+          <h2>ASK ME QUESTIONS</h2>
+          <h5>Rachel Willmer / <a href="http://twitter.com/rwillmer">@rwillmer</a></h5>
+          <h5>Founder / <a href="http://twitter.com/YOUR_COMPANY_TWITTER_HANDLE">@askluzme </a></h5>
+        </section>
+<!--
         <section>
           <h2>Assets Used</h2>
 
@@ -820,7 +906,7 @@ app.controller('ChatCtrl', function($scope, $firebaseArray) {
           </ul>
 
         </section>
-
+ -->
       </div>
 
     </div>
