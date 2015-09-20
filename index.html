@@ -86,6 +86,10 @@
         </section>
 
         <section>
+          <p class='text-large'>Dobré ráno!</p>
+        </section>
+
+        <section>
           <p class="text-cream text-medium">What is Real-Time Data?</p>
           <p class="text-cream text-medium"><span class="text-discs">What is Firebase?</span></p>
           <p class="text-cream text-medium">What is Luzme?</p>
@@ -264,6 +268,11 @@
         );
         </code>
         </pre>
+        </section>
+
+        <section>
+          <h2>The Architecture</h2>
+          <img src='images/luzme.png' alt="The Architecture"/>
         </section>
 
         <section>
@@ -571,7 +580,7 @@ ref.authWithOAuthToken("google", "&lt;OAuth Token&gt;", new Firebase.AuthResultH
 <pre>
           <code-box langs="JavaScript,Swift,Java">
             <code-example lang="JavaScript" prop="one">
-// Listen for authentcated users
+// Listen for authenticated users
 ref.onAuth(function(authData) {
   if(authData) {
     console.log('User is logged in!');
