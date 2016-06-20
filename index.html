@@ -86,7 +86,8 @@
         </section>
 
         <section>
-          <p class='text-large'>Dobré ráno!</p>
+          <p class='text-large'>Céad míle fáilte</p>
+          <!-- <p class='text-large'>Dobré ráno!</p> -->
         </section>
 
         <section>
@@ -107,9 +108,11 @@
         <section>
           <h3>I am ...</h3>
           <p class="text-medium">Rachel Willmer</p>
-          <p class="text-cream text-medium">A Programmer</p>
-          <p class="text-cream text-medium">An Entrepreneur</p>
-          <p class="text-cream text-medium">An Avid Book Lover</p>
+          <p class="text-cream">A Programmer</p>
+          <p class="">An Entrepreneur</p>
+          <p class="text-cream">An Avid Book Lover</p>
+          <p>&nbsp;</p>
+          <p class="">and a Google Developer Expert (Firebase)</p>
           <aside class='notes'>
           	Been working with new technology for 30 years...
           	Been working for myself for 20 years...
@@ -283,13 +286,13 @@
 
         <section>
           <h3>I need ...</h3>
-          <p class='text-small'>Easy to write</p>
-          <p class='text-small'>Easy to debug</p>
           <p class='text-small'>Real-Time</p>
           <p class='text-small'>Mobile</p>
           <p class='text-small'>Speed</p>
           <p class="text-small">Scalability</p>
           <p class='text-small'>Reliability</p>
+          <p class='text-small'>Easy to write</p>
+          <p class='text-small'>Easy to debug</p>
         </section>
 <!--
         <section>
@@ -319,7 +322,11 @@
 -->
 
         <section>
-					<p class="text-medium era-point">The user doesn't care about your backend</p>
+          <p class="text-medium era-point">The user doesn't care :
+            <ul>
+              <li>about your backend</li>
+              <li>or your frontend</li>
+            </ul>
 				</section>
 
         <section>
@@ -885,18 +892,149 @@ fb.put('/foo', 'bar', {'hello': 'world'})
 
         <section>
           <h3>I need ...</h3>
-          <p>Easy to write</p>
-          <p>Easy to debug</p>
           <p>Real-Time</p>
           <p>Mobile</p>
           <p>Speed</p>
           <p>Scalability</p>
           <p>Reliability</p>
+          <p>Easy to write</p>
+          <p>Easy to debug</p>
           <p class='text-medium'>That's Why I Chose Firebase</p>
         </section>
 
         <section>
-          <h2>ASK ME QUESTIONS</h2>
+          <h3>How To Get Started?</h3>
+          <p class='text-medium'>Aargh, it's so complicated!</p>
+        </section>
+
+        <section>
+          <h3>No, Not Firebase :)</h3>
+          <p>Everything else to do with developing, <br/>testing
+           and building
+            an Angular app</p>
+          <p class='text-small'>Project File Structure</p>
+          <p class='text-small'>User Testing</p>
+          <p class='text-small'>End-To-End Testing</p>
+          <!-- <p class='text-small'>Coverage Testing</p> -->
+          <p class='text-small'>Build</p>
+          <p class='text-small'>Deployment</p>
+          <p class='text-small'>Task Runner</p>
+          <p class='text-small'>Generators</p>
+        </section>
+
+        <section>
+          <h3>Hat-Tip to...</h3>
+            <a href="https://github.com/johnpapa/angular-styleguide">
+              John Papa's Opinionated Style Guide<br/>
+              https://github.com/johnpapa/angular-styleguide
+            </a>
+          <p class='text'>
+            which taught me 90% of what I know now
+          </p>
+        </section>
+
+        <section>
+        <h3>My Project File Structure</h3>
+        <pre>
+        - src
+          - client
+            - app
+              index.html
+              images
+              styles
+              fonts
+          - server
+            ...
+        - bower.json
+        - bower_components/
+        - package.json
+        - node_modules
+        - test
+          - karma.conf.js
+          - protractor.conf.js
+        - e2e-tests
+        </pre>
+        </section>
+
+        <section>
+          <h3>Task Runner</h3>
+          <p class='text-medium'>Gulp or Grunt</p>
+          <p><a href='http://gulpjs.com'>http://gulpjs.com</a></p>
+          <p><a href='http://gruntjs.com'>http://gruntjs.com</a></p>
+        </section>
+
+        <section>
+          <h3>Unit Testing</h3>
+          <p>Karma: Test Runner</p>
+          <p>Karma was developed by Angular team</p>
+          <p class='text-small'><a href='https://karma-runner.github.io'>https://karma-runner.github.io/0.13/index.html</a>
+          </p>
+          <p>Choice of Test Frameworks</p>
+          <ul>
+            <li>Jasmine</li>
+            <li>Jasmine 2</li>
+            <li>Mocha</li>
+            <li>Chai</li>
+            <li>QUnit</li>
+            <li>etc</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>E2E testing</h3>
+          <p>Protractor</p>
+          <p>Protractor was developed by Angular team</p>
+          <p class='text-small'><a href='http://www.protractortest.org'>http://www.protractortest.org</a>
+        </section>
+
+
+        <section>
+          <h3>Task Runner</h3>
+          <p>Run a dev server</p>
+            <ul>
+              <li>Compile Less/Sass files -> CSS</li>
+              <li>Transpile ES6/TypeScript -> ES5</li>
+              <li>Watch source files for changes</li>
+            </ul>
+          <p>Run unit tests</p>
+          <p>Build for deployment</p>
+            <ul>
+              <li>Compile/Transpile</li>
+              <li>Minimise images</li>
+              <li>Add cache-busters</li>
+              <li>Minimise/uglify code</li>
+            </ul>
+          <p>Deploy to test/stage/live</p>
+          <p>Run E2E tests on dev/test/stage/live</p>
+        </section>
+
+        <section>
+          <h3>Generators</h3>
+          <p>Why not use a generator?</p>
+          <p>What's a generator?</p>
+          <p>Should I use a generator?</p>
+        </section>
+
+        <section>
+          <h3>I'm writing a book!</h3>
+          <a href='https://www.gitbook.com/book/rwillmer/step-by-step-to-angular2-and-firebase'>
+          https://www.gitbook.com/book/rwillmer/step-by-step-to-angular2-and-firebase
+          </a>
+        </section>
+
+        <section>
+          <h3>And Finally...</h3>
+          <p class='text-medium'>What's Next?</p>
+          <p>Finish the book</p>
+          <p>Release the Firebase version of Luzme</p>
+          <p>Spinout Luzme-based subject-specific websites</p>
+          <p>Starting a podcast (anyone here into startups?)</p>
+          <p>Angular2!</p>
+          <p>Mobile version: Ionic + Firebase</p>
+        </section>
+
+        <section>
+          <h2>ASK ME ANYTHING</h2>
           <h5>Rachel Willmer / <a href="http://twitter.com/rwillmer">@rwillmer</a></h5>
           <h5>Founder / <a href="http://twitter.com/YOUR_COMPANY_TWITTER_HANDLE">@askluzme </a></h5>
         </section>
