@@ -1,82 +1,38 @@
 <!doctype html>
-<html lang="en">
-
-  <head>
-    <meta charset="utf-8">
-
+<html>
+	<head>
     <title>Why I chose Firebase to add Real-Time Data to Luzme</title>
 
     <meta name="description" content="Why I chose Firebase to add Real-Time Data to Luzme">
     <meta name="author" content="Rachel Willmer">
 
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
 
-    <link rel="stylesheet" href="css/reveal.min.css">
-    <link rel="stylesheet" href="css/theme/firebase.css" id="theme">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
 
-    <!-- For syntax highlighting -->
-    <link rel="stylesheet" href="lib/css/zenburn.css">
-
-    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
-    <script>
-      if( window.location.search.match( /print-pdf/gi ) ) {
-        var link = document.createElement( 'link' );
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = 'css/print/pdf.css';
-        document.getElementsByTagName( 'head' )[0].appendChild( link );
-      }
-    </script>
-
-    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-    <link rel="import" href="/code-box/code-box.html">
-    <link rel="import" href="/code-box/code-example.html">
-
-  <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
-  <script>
-    window.addEventListener('load', installCounter);
-
-    function installCounter() {
-      var devsRef = new Firebase("https://firebase-website.firebaseio.com/stats/signups");
-      var counterSpan = document.getElementById('current-devs');
-      devsRef.on("value", function (snap) {
-        // Use thousand separator in counter.
-        counterSpan.textContent = snap.val().toLocaleString();
-      });
-    }
-    </script>
-
-    <!--[if lt IE 9]>
-    <script src="lib/js/html5shiv.js"></script>
-    <![endif]-->
-  </head>
-
-  <body>
-
-    <div class="reveal">
-
-      <small id="era">
-
-      </small>
-
-      <div class="slides">
-
-        <!--
-          Intro
-        -->
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
         <section title="">
-          <br><br>
-        <section title="">
-          <br><br>
           <h2>Why I chose Firebase to add Real-Time Data to Luzme</h2>
           <p>
             <h6>Rachel Willmer / <a href="http://twitter.com/rwillmer">@rwillmer</a></h6>
-	          <img src="images/firebase-logo.png" class="no-style" 	style='float: left' width=100px>
-	          <img src="images/Luzme-400dpiLogo.png" class="no-style" style='float: right' width=200px>
-          <br> <br>
+	          <img src="images/firebase-logo.png" class="no-style" 	style='float: left; border: none' width=100px>
+	          <img src="images/Luzme-400dpiLogo.png" class="no-style" style='float: right; border:none' width=200px>
 
           </p>
 
@@ -98,14 +54,6 @@
         </section>
 
         <section>
-          <h3>Warning</h3>
-          <p class="text-medium">There Will Be A Demo</p>
-          <p class="text-cream text-medium">and I need your help</p>
-          <p class="text-small">Please open a browser<br/>
-          and login with Twitter</p>
-        </section>
-
-        <section>
           <h3>I am ...</h3>
           <p class="text-medium">Rachel Willmer</p>
           <p class="text-cream">A Programmer</p>
@@ -121,24 +69,14 @@
         </section>
 
         <section>
-          <h3>This is my bookshelf</h3>
-          <img src="images/Bookshelf.jpg" alt="My Bookshelf" class="no-style" />
-        </section>
-
-        <section>
-          <h3>So I have a problem!</h3>
-          <p class="text-medium">and the solution is ebooks</p>
-        </section>
-
-        <section>
           <h3>So I built Luzme</h3>
           <p class='text-small'>"Never Pay Full-Price For An Ebook Again!"</p>
-          <img src="images/Luzme-400dpiLogo.png" class="no-style" width=200px>
+          <img src="images/Luzme-400dpiLogo.png" class="no-style" style="border: none;" width=200px>
           <p class='text-medium'>
           	<a href='https://luzme.com'>
-				https://luzme.com
-			</a>
-		  </p>
+							https://luzme.com
+						</a>
+				  </p>
           <p>the world's best ebook search site (IMHO)</p>
         </section>
 
@@ -207,14 +145,14 @@
           <p class='fragment'>&lt;Happy Dance&gt;</p>
         </section>
 
+
         <section>
           <h3>Demo Time</h3>
           <p>Please open a browser</p>
           <p>and login into Twitter</p>
           <br>
           <p class='fragment'>
-          <a href='https://vote-demo.firebaseapp.com' target='_blank'>https://vote-demo.firebaseapp.com</a><br/>
-          <!-- <a href='https://vote-demo.firebaseio.com' target='_blank'>https://vote-demo.firebaseio.com</a> -->
+          <a href='https://vote-demo.firebaseapp.com' target='_blank'>https://vote-demo.firebaseapp.com</a>
           </p>
 
           <aside class='notes'>
@@ -257,8 +195,8 @@
         </ul>
     </div>
 </div>
-</code>
-</pre>
+					</code>
+					</pre>
         </section>
 
         <section>
@@ -294,32 +232,6 @@
           <p class='text-small'>Easy to write</p>
           <p class='text-small'>Easy to debug</p>
         </section>
-<!--
-        <section>
-          <p class="text-cream text-medium">The <span class="text-discs">Realtime Backend</span></p>
-          <p class="text-cream text-medium">for your App</p>
-        </section>
-
-        <section>
-          <p class="text-medium">Creating an app shouldn't require managing complex infrastructure.</p>
-        </section>
-
-        <section>
-          <h3>The Full Stack</h3>
-          <img src="images/full-stack.png" alt="The Full Stack" class="no-style" />
-        </section>
-
-        <section>
-          <p class="text-small">The full stack is never really that simple</p>
-          <img src="images/backend-reqs.gif" alt="" class="white-bg no-style" />
-        </section>
-
-        <section>
-          <p class="text-small">... and neither is the client side</p>
-          <br><br>
-          <img src="images/clients.png" alt="gdocs" class="no-style" />
-        </section>
--->
 
         <section>
           <p class="text-medium era-point">The user doesn't care :
@@ -337,19 +249,7 @@
           <p class="text-small era-point">Simple Authentication</p>
         </section>
 
-        <!--
-          Firebase
-        -->
-        <!--
-        <section>
-          <h3>Firebase</h3>
-          <img src="images/firebase-logo.png" class="no-style era-point">
-          <br>
-          <p class="text-cream">The <span class="text-discs">Realtime Backend</span></p>
-          <p class="text-cream">for your App</p>
-        </section>
-		-->
-
+<!-- 
         <section>
           <h4>The Firebase Backend</h4>
           <img src="images/data-box.png" class="no-style framework-logo">
@@ -358,40 +258,26 @@
           <img src="images/hosting-box.png" class="no-style framework-logo">
         </section>
 
-<!--
-        <section>
-					<h3>Forget the Server</h3>
-					<p class="era-point">Firebase apps can run on client-side code only</p>
-					<br>
-					<img src="/images/platforms.png" alt="" class="no-style framework-logo">
-				</section>
-
-        <section>
-          <img src="images/data-box.png" class="no-style framework-logo">
-        </section>
--->
-
+ -->
         <section>
           <h2>Cloud database</h2>
           <p class="era-point">NoSQL data-store</p>
           <p class="era-point">Returns JSON from a RESTful API</p>
         </section>
-<!--
-        <section>
-          <img src="/images/simple-api.png" alt="" class="no-style">
-        </section>
- -->
+
         <section>
           <h2>Realtime Data</h2>
           <p class="era-point text-cream">
-            Whenever <span class="text-discs">data is  updated in Firebase</span>,
-            it sends the update down to every <span class="text-tarheel">listening client</span>
+            Whenever <span class="text-discs">data is  updated in Firebase</span>,<br/>
+            it sends the update down<br/>
+            <u>to every <span class="text-tarheel">listening client</span></u>
           </p>
         </section>
 
         <section>
           <img src="/images/Realtime-sync-anim.gif" alt="" class="no-style" style="max-width: 85%;">
         </section>
+
 
         <section>
           <p class="text-medium">SDKs</p>
@@ -462,7 +348,7 @@ ref.addValueEventListener(new ValueEventListener() {
         <section>
           <h3>Intermittent Offline</h3>
 
-          <p class="text-small">What happens when you go through a tunnel?</p>
+          <p class="text-small">Or, What happens when you go through a tunnel?</p>
           <br><br>
           <p class="text-small fragment">
             Firebase clients store a local cache of your data. When the user
@@ -471,10 +357,11 @@ ref.addValueEventListener(new ValueEventListener() {
 
         </section>
 
+
         <section>
           <h3>Extended Offline</h3>
 
-          <p class="text-small">What happens when you go on a flight?</p>
+          <p class="text-small">Or, What happens when you go on a flight?</p>
           <br><br>
           <p class="text-small fragment">
             On mobile, Firebase persists data to a local store. The app will continue
@@ -502,6 +389,7 @@ Firebase.getDefaultConfig().setPersistenceEnabled(true);
         <section>
           <img src="images/login-box.png" class="no-style framework-logo">
         </section>
+
 
         <section>
 
@@ -538,6 +426,7 @@ Firebase.getDefaultConfig().setPersistenceEnabled(true);
           </p>
 
         </section>
+
 
         <section class="hasCode">
 
@@ -580,6 +469,7 @@ ref.authWithOAuthToken("google", "&lt;OAuth Token&gt;", new Firebase.AuthResultH
           </code-box>
           </pre>
         </section>
+
 
         <section class="hasCode">
 
@@ -726,6 +616,7 @@ ref.authWithOAuthToken("google", "&lt;OAuth Token&gt;", new Firebase.AuthResultH
           <img src="images/hosting-box.png" class="no-style framework-logo">
         </section>
 
+
   			<section>
   					<h3>Hosting</h3>
   					<p class="text-small">When you're ready to launch</p>
@@ -759,10 +650,12 @@ firebase deploy
 
         <section>
           <h3>Bindings</h3>
+<!--          
           <img src="/images/backbonejs.png" class="framework-logo no-style" />
           <img src="/images/emberjs.png" class="framework-logo no-style" />
           <img src="/images/react.png" class="framework-logo no-style" />
           <img src="/images/angularjs.png" class="framework-logo no-style" />
+-->          
         </section>
 
         <section>
@@ -790,11 +683,13 @@ app.controller('ChatCtrl', function($scope, $firebaseArray) {
 					</pre>
 				</section>
 
+<!--
         <section>
 					<h3>Geofire</h3>
 					<p class="text-smaller">Store and query items based on their geographic location in realtime</p>
 					<iframe src="https://geofire.firebaseapp.com/sfVehicles/" height="450px" width="100%"></iframe>
 				</section>
+-->
 
 				<section>
 					<h3>Well Documented</h3>
@@ -1015,12 +910,14 @@ fb.put('/foo', 'bar', {'hello': 'world'})
           <p>Should I use a generator?</p>
         </section>
 
+<!--
         <section>
           <h3>I'm writing a book!</h3>
           <a href='https://www.gitbook.com/book/rwillmer/step-by-step-to-angular2-and-firebase'>
           https://www.gitbook.com/book/rwillmer/step-by-step-to-angular2-and-firebase
           </a>
         </section>
+-->
 
         <section>
           <h3>And Finally...</h3>
@@ -1038,79 +935,26 @@ fb.put('/foo', 'bar', {'hello': 'world'})
           <h5>Rachel Willmer / <a href="http://twitter.com/rwillmer">@rwillmer</a></h5>
           <h5>Founder / <a href="http://twitter.com/YOUR_COMPANY_TWITTER_HANDLE">@askluzme </a></h5>
         </section>
-<!--
-        <section>
-          <h2>Assets Used</h2>
 
-          <ul>
-            <li><a href="https://thenounproject.com/search/?q=database&i=9658">https://thenounproject.com/search/?q=database&i=9658</a></li>
-            <li><a href="https://thenounproject.com/search/?q=server&i=34235">https://thenounproject.com/search/?q=server&i=34235</a></li>
-            <li><a href="https://thenounproject.com/search/?q=api&i=137607">https://thenounproject.com/search/?q=api&i=137607</a></li>
-            <li><a href="https://thenounproject.com/search/?q=users&i=36217">https://thenounproject.com/search/?q=users&i=36217</a></li>
-            <li><a href="https://thenounproject.com/search/?q=macbook&i=20320">https://thenounproject.com/search/?q=macbook&i=20320</a></li>
-            <li><a href="https://thenounproject.com/search/?q=iphone&i=5765">https://thenounproject.com/search/?q=iphone&i=5765</a></li>
-            <li><a href="https://thenounproject.com/search/?q=nexus-5&i=26045">https://thenounproject.com/search/?q=nexus-5&i=26045</a></li>
-          </ul>
+			</div>
+		</div>
 
-        </section>
- -->
-      </div>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
 
-    </div>
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
 
-    <script src="lib/js/head.min.js"></script>
-    <script src="js/reveal.min.js"></script>
-    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-
-    <script>
-
-      // Full list of configuration options available here:
-      // https://github.com/hakimel/reveal.js#configuration
-      Reveal.initialize({
-        controls: false,
-        progress: true,
-        history: true,
-        center: true,
-
-        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-        transition: Reveal.getQueryHash().transition || 'concave', // default/cube/page/concave/zoom/linear/fade/none
-
-        // Parallax scrolling
-        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-        // parallaxBackgroundSize: '2100px 900px',
-
-        // Optional libraries used to extend on reveal.js
-        dependencies: [
-          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-        ]
-      });
-
-    </script>
-
-    <script>
-
-      function signPostEra( event ) {
-        var title = event.currentSlide.attributes.title;
-
-        if(title) {
-          var era = document.getElementById('era');
-          era.innerText = title.value;
-        }
-      }
-
-      Reveal.addEventListener( 'ready', function( event ) {
-        signPostEra( event );
-      });
-
-      Reveal.addEventListener( 'slidechanged', function( event ) {
-        signPostEra( event );
-      });
-
-    </script>
-  </body>
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
 </html>
